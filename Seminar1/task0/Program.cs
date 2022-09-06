@@ -1,8 +1,22 @@
-﻿// Напишите программу, которая принимает на вход  число и выдает его квадрат.
-// Например: 
-// 4 -> 16
-// 3 -> 9
-// 7 -> 49
-Console.WriteLine("Введите число");
-int number = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(number * number);
+﻿// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+
+// a = 5; b = 7 -> max = 7
+// a = 2 b = 10 -> max = 10
+// a = -9 b = -3 -> max = -3
+
+Console.WriteLine("Введите число 1:");
+int numberA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число 2:");
+int numberB = Convert.ToInt32(Console.ReadLine());
+if(numberA == numberB)
+{
+    Console.WriteLine("Они равны.");
+}
+else if (numberA > numberB)
+{
+    Console.WriteLine($"max = {numberA}, min = {numberB}");
+}
+else 
+{
+    Console.WriteLine($"max = {numberB} , min = {numberA}");
+}
