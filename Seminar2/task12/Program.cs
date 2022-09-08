@@ -7,12 +7,19 @@ Console.WriteLine("Введите первое число:");
 int numberA = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе число:");
 int numberB = Convert.ToInt32(Console.ReadLine());
-if(numberA / numberB == 0)
+if(numberA != 0)
 {
-    Console.WriteLine("Число кратное");
+    int mod = numberA % numberB;
+    if(mod == 0)
+    {
+        Console.WriteLine("Числа кратные");
+    }
+    else
+    {
+        Console.WriteLine($"Не кратно, остаток {mod}");
+    }
 }
-else if
+else
 {
-    int N = numberA % numberB;
-    Console.WriteLine($"Остаток {N}");
+    Console.WriteLine("Нельзя делить на ноль!");
 }
