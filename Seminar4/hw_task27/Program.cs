@@ -9,15 +9,17 @@ int ReadNumber(string message)
     return Convert.ToInt32(Console.ReadLine());
 }
 int number = ReadNumber("Введите число");
-int result = SumDigitals(number);
-int SumDigitals(int num)
+int result = 0;
+if(number > 0)
 {
-    int res = 0;
-    while(num != 0)
+    while(number != 0)
     {
-        res = res + (number % 10);
-        num = number / 10;
+        result = result + (number % 10);
+        number = number / 10;
     }
-    return res;
+    Console.WriteLine(result);
 }
-Console.WriteLine(result);
+else
+{
+    Console.WriteLine("Число должно быть положительное");
+}
