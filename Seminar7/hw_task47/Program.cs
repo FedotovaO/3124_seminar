@@ -18,7 +18,7 @@ double[,] GetMatrix(int rowsCount, int columnCount, int leftRange = -100, int ri
     {
         for(int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = rand.NextDouble() * rand.Next(leftRange, rightRange +1);
+            matrix[i, j] = rand.NextDouble() * (rightRange - leftRange) + leftRange;
         }
     }
     return matrix;
