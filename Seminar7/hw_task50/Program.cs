@@ -46,7 +46,7 @@ if(line > matr.GetLength(0) || column > matr.GetLength(1))
 {
     Console.WriteLine("Колличество сток/столбцов не может превышать колличество строк/столбцов в массиве.");
 }
-if(line <= 0 || column <= 0)
+else if(line <= 0 || column <= 0)
 {
     Console.WriteLine("Колличество сток/столбцов не может иметь отрицательное значение или равняться нулю.");
 }
