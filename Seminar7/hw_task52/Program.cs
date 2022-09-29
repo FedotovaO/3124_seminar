@@ -9,41 +9,39 @@ int[,] GetMatrix(int rowsCount = 5, int columnCount = 5, int leftRange = 0, int 
 {
     int[,] matrix = new int[rowsCount, columnCount];
     Random rand = new Random();
-    for(int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for(int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = rand.Next(leftRange, rightRange +1);
+            matrix[i, j] = rand.Next(leftRange, rightRange + 1);
         }
     }
     return matrix;
 }
 void PrintMatrix(int[,] matrix)
 {
-    for(int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for(int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
             Console.Write($"{matrix[i, j]}   ");
         }
         Console.WriteLine();
     }
 }
-
-
 int[,] array = GetMatrix();
 PrintMatrix(array);
 Console.WriteLine();
-
-for(int j = 0; j < array.GetLength(1); j++)
+void ArithmeticMeanColumn(int[,] array)
 {
-    int a = 0;
-    int count = 0;
-    for(int i = 0; i < array.GetLength(0); i++)
+    for (int j = 0; j < array.GetLength(1); j++)
     {
-        a = array[i, j] + a;
-        count++;
+        double a = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            a = array[i, j] + a;
+        }
+        Console.Write($"{a / array.GetLength(0)}  ");
     }
-    double arithmetic = a / count;
-    Console.Write($"{arithmetic}  ");
 }
+ArithmeticMeanColumn(array);
