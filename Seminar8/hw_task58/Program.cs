@@ -52,6 +52,13 @@ int column = ReadNumber("Введите колличество столбцов"
 
 int[,] array1 = GetMatrix(line, column);
 int[,] array2 = GetMatrix(line, column);
+
+if (array1.GetLength(0) != array2.GetLength(1))  // проверяем матрицы на возможность произведения
+{
+    Console.WriteLine("Невозможно произведение матриц");
+    return;
+}
+
 int[,] finalArray = new int[line, column];
 
 for (int i = 0; i < array1.GetLength(0); i++)
